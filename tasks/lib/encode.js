@@ -95,6 +95,12 @@ exports.init = function(grunt) {
           return;
         }
 
+        if (group[3] && group[3].slice(0, 1) == '#') {
+          result += group[2];
+          complete();
+          return;
+        }
+
         // process it
         var loc = img,
           is_local_file = !rData.test(img) && !rExternal.test(img);
